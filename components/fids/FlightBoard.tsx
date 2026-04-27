@@ -13,7 +13,7 @@ interface FlightBoardProps {
 }
 
 export function FlightBoard({ initialFlights }: FlightBoardProps) {
-  const { filters, setFilter, setFlights } = useFlightsStore();
+  const { filters, setFilter, setFlights, sort, setSort } = useFlightsStore();
   const flights = useFlightsStore(useShallow(selectFilteredFlights));
 
   useEffect(() => {
@@ -96,10 +96,28 @@ export function FlightBoard({ initialFlights }: FlightBoardProps) {
         <span>Flight</span>
         <span>Airline</span>
         <span>Destination</span>
-        <span className="text-center">Time</span>
-        <span className="text-center">Term.</span>
+        <button
+          onClick={() => setSort('departureTime')}
+          className="text-center flex items-center justify-center gap-1 hover:text-amber-400 transition-colors"
+        >
+          Time
+          {sort.column === 'departureTime' && <span>{sort.direction === 'asc' ? '▲' : '▼'}</span>}
+        </button>
+        <button
+          onClick={() => setSort('terminal')}
+          className="text-center flex items-center justify-center gap-1 hover:text-amber-400 transition-colors"
+        >
+          Term.
+          {sort.column === 'terminal' && <span>{sort.direction === 'asc' ? '▲' : '▼'}</span>}
+        </button>
         <span className="text-center">Gate</span>
-        <span>Status</span>
+        <button
+          onClick={() => setSort('status')}
+          className="flex items-center gap-1 hover:text-amber-400 transition-colors"
+        >
+          Status
+          {sort.column === 'status' && <span>{sort.direction === 'asc' ? '▲' : '▼'}</span>}
+        </button>
       </div>
 
       {/* Flights */}
