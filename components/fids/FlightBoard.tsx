@@ -78,6 +78,14 @@ export function FlightBoard({ initialFlights }: FlightBoardProps) {
           ))}
         </select>
 
+        <input
+          type="text"
+          value={filters.destination}
+          onChange={(e) => setFilter('destination', e.target.value)}
+          placeholder="Destination..."
+          className="bg-board-row border border-board-border text-board-text text-xs px-3 py-1.5 rounded focus:outline-none focus:border-amber-600 w-36"
+        />
+
         <span className="ml-auto text-xs text-board-muted">
           {flights.length} flight{flights.length !== 1 ? 's' : ''}
         </span>
