@@ -6,7 +6,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/repos/shared-to-mcp"
+        "/home/bart/repos/shared-to-mcp"
       ],
       "env": {}
     }
