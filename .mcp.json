@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "files": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/repos/shared-to-mcp"
+      ],
+      "env": {}
+    }
+  }
+}
