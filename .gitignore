@@ -43,3 +43,4 @@ tsconfig.tsbuildinfo
 
 # Turbo
 .turbo
+.mcp.json
